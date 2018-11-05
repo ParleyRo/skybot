@@ -46,13 +46,14 @@ class EchoBot {
             }
             else {
                 let userName = turnContext.activity.from.name;
+                let skypeId1 = turnContext.activity.from.id;
                 // This example hardcodes specific uterances. You should use LUIS or QnA for more advance language understanding.
                 let text = turnContext.activity.text.toLowerCase();
 
                 let greatingWords = ['hi', 'hello', 'what\'s up', 'wassup', 'sup', 'hey','greatings'];
 
                 if (greatingWords.indexOf(text) > -1) {
-                    await turnContext.sendActivity(`Hello again, ${userName} !`);
+                    await turnContext.sendActivity(`Hello again, ${userName} ${skypeId1}!`);
                     await this.welcomedUserPropery.set(turnContext, true);
                 }else{
                     switch (text) {
