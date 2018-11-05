@@ -46,7 +46,7 @@ class EchoBot {
             }
             else {
                 let userName = turnContext.activity.from.name;
-                let skypeId1 = turnContext.activity.from.id;
+                let skypeId1 = turnContext.activity.recipient.id;
                 // This example hardcodes specific uterances. You should use LUIS or QnA for more advance language understanding.
                 let text = turnContext.activity.text.toLowerCase();
 
